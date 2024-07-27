@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900">
+    <title>Days Since</title>
+    <style>
+        body {
+            background-color: #191919;
+            color: #eeeeee;
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        #timer {
+            margin-top: 20vh;
+            font-size: 2em;
+        }
+
+        .days {
+            display: inline-block;
+            padding: 20px;
+            width: 100px;
+            border-radius: 5px;
+            background: #2B2B2B;
+        }
+
+        .numbers {
+            font-family: 'Montserrat', sans-serif;
+            color: #eeeeee;
+            font-size: 4em;
+        }
+    </style>
+</head>
+<body>
+    <div id="timer">
+        <div class="days"> 
+            <div id="days" class="numbers">0</div> days
+        </div>
+    </div>
+
+    <script>
+        // Set the starting date
+        const startDate = new Date('2023-04-24T00:00:00'); // Set your starting date here
+
+        function updateDaysSince() {
+            const now = new Date().getTime();
+            const diff = now - startDate.getTime();
+
+            // Calculate the number of days
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            document.getElementById("days").innerHTML = days;
+        }
+
+        // Update the days since on page load
+        updateDaysSince();
+    </script>
+</body>
+</html>
