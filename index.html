@@ -16,29 +16,31 @@
         }
 
         #timer {
-            margin-top: 20vh;
-            font-size: 2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Center vertically */
+            margin: 0;
         }
 
         .days {
             display: inline-block;
             padding: 20px;
-            width: 100px;
             border-radius: 5px;
-            background: #2B2B2B;
-        }
-
-        .numbers {
-            font-family: 'Montserrat', sans-serif;
-            color: #eeeeee;
+            background: #f4c2c2; /* Pale pink color */
+            color: #191919; /* Dark text color for contrast */
             font-size: 4em;
+            font-family: 'Montserrat', sans-serif;
+            max-width: 100%; /* Responsive max-width */
+            box-sizing: border-box; /* Include padding in width */
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <div id="timer">
         <div class="days"> 
-            <div id="days" class="numbers">0</div> days
+            <div id="days">0</div> days
         </div>
     </div>
 
