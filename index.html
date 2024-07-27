@@ -24,21 +24,19 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 1920px;
-            height: 1080px;
+            width: 100%; /* Adjusted to 100% for responsiveness */
+            max-width: 800px; /* Optional: Set a maximum width */
+            margin: 0 auto; /* Center horizontally */
         }
 
         .days {
             display: inline-block;
             padding: 20px;
             border-radius: 5px;
-            background: #f4c2c2; /* Pale pink color */
-            color: #191919; /* Dark text color for contrast */
-            font-size: 6em; /* Adjusted font size for better visibility */
+            background: #f4c2c2;
+            color: #191919;
+            font-size: 6em;
             font-family: 'Montserrat', sans-serif;
-            max-width: 100%;
-            width: auto;
-            box-sizing: border-box;
             text-align: center;
             overflow: hidden;
         }
@@ -52,19 +50,15 @@
     </div>
 
     <script>
-        // Set the starting date
-        const startDate = new Date('2024-04-24T00:00:00'); // Set your starting date here
+        const startDate = new Date('2024-04-24T00:00:00');
 
         function updateDaysSince() {
             const now = new Date().getTime();
             const diff = now - startDate.getTime();
-
-            // Calculate the number of days
             const days = Math.floor(diff / (1000 * 60 * 60 * 24));
             document.getElementById("days").innerHTML = days;
         }
 
-        // Update the days since on page load
         updateDaysSince();
     </script>
 </body>
